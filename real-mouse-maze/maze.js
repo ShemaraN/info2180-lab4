@@ -25,7 +25,6 @@
         {
             walls[i].className= "boundary youlose";
             document.getElementById("status").innerHTML = "Loser! Try again.";
-            
         }
         
     }
@@ -58,4 +57,13 @@
    {
            window.location.reload();
        
+   }
+   
+   function outbox(event)
+   {
+       var maze= document.getElementById("start");
+       var top = maze.offsetLeft
+       document.addEventListener("mousemove",top);
+       var y= event.clientY;
+       var x = event.clientX; 
    }
