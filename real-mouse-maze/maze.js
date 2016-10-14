@@ -1,9 +1,9 @@
 // JavaScript File
 
-    window.onload= function()
+    window.onload = function()
     {
-        var hit= false;
-        var walls = document.querySelectorAll(".boundary");
+        hit= false;
+        walls = document.querySelectorAll(".boundary");
         
         document.getElementById("start").addEventListener("mouseover",start);
         document.getElementById("end").addEventListener("mouseover",end);
@@ -11,11 +11,10 @@
         {
             walls[i].addEventListener("mouseover", allborders);
         }
-        
+        document.getElementById("start").addEventListener("click", reset);
     }
     
-    
-    //turn red
+   
     function allborders()
     {
         var walls = document.querySelectorAll(".boundary");
@@ -23,16 +22,7 @@
         {
             walls[i].className= "boundary youlose";
         }
-        document.getElementById("start").addEventListener("click", reset);
-    }
-    
-    function start()
-    {
-        var walls = document.querySelectorAll(".boundary");
-        for (i=0; i<walls.length; i++)
-        {
-            walls.classList. removeAttribute("you lose");
-        }
+        
     }
     
     function end()
@@ -46,3 +36,19 @@
             alert("Loser! Try Again");
         }
     }
+    
+    function start()
+    {
+        var walls = document.querySelectorAll(".boundary");
+        for (i=0; i<walls.length; i++)
+        {
+            walls.classList. removeEventListener("you lose");
+        }
+    }
+    
+    
+   function reset()
+   {
+           window.location.reload();
+       
+   }
