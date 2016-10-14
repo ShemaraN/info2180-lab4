@@ -27,13 +27,16 @@
     
     function end()
     {
-       var hit=true;
+        hit=true;
         if(hit)
         {
-            alert("You Win!");
-        } else
+            document.getElementById("status").innerHTML = 'You Win!';
+            //alert("You Win!");
+        } 
+        else
         {
-            alert("Loser! Try Again");
+            document.getElementById("status").innerHTML = 'Loser! Try again.';
+            //alert("Loser! Try Again");
         }
     }
     
@@ -42,7 +45,7 @@
         var walls = document.querySelectorAll(".boundary");
         for (i=0; i<walls.length; i++)
         {
-            walls.classList. removeEventListener("you lose");
+            walls.classList. addEventListener("you lose");
         }
     }
     
