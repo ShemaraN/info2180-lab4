@@ -14,8 +14,17 @@
             walls[i].addEventListener("mouseover", allborders);
         }
         document.getElementById("start").addEventListener("click", reset);
+        
+        var maze= document.getElementById("start");
+        var left = maze.offsetHeight;
+        var x = event.clientX;
+        var y = event.clientY;
+        document.getElementById("start").addEventListener("mousemove", start);
+        
+        
     }
     
+   //offsetLeft 558 X 444 px offsetTop
    
     function allborders()
     {
@@ -25,6 +34,7 @@
         {
             walls[i].className= "boundary youlose";
             document.getElementById("status").innerHTML = "Loser! Try again.";
+            
         }
         
     }
@@ -49,6 +59,7 @@
         for (var i=0; i<walls.length; i++)
         {
             walls.classList. remove("you lose");
+
         }
     }
     
@@ -59,11 +70,4 @@
        
    }
    
-   function outbox(event)
-   {
-       var maze= document.getElementById("start");
-       var top = maze.offsetLeft
-       document.addEventListener("mousemove",top);
-       var y= event.clientY;
-       var x = event.clientX; 
-   }
+ 
