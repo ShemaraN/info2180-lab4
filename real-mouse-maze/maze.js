@@ -21,6 +21,10 @@
         var y = event.clientY;
         document.getElementById("start").addEventListener("mousemove", start);
         
+         if (event.clientX < '400px' && clientY < '300px'  )
+            {
+                boundary.addEventListener("mousemove", allborders);
+            }
         
     }
     
@@ -34,7 +38,7 @@
         {
             walls[i].className= "boundary youlose";
             document.getElementById("status").innerHTML = "Loser! Try again.";
-            
+           
         }
         
     }
